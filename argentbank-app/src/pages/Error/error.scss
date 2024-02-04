@@ -1,25 +1,25 @@
 .error {
-    h1 {
-        font-size: 288px;
-        color: #00bc77;
-        @media screen and (max-width: 768px) {
-            font-size: 96px;
-          }
+  h1 {
+    font-size: 288px;
+    color: #00bc77;
+    @media screen and (max-width: 768px) {
+      font-size: 96px;
     }
+  }
 
-    p {
-        font-size: 36px;
-        color: #00bc77;
-        @media screen and (max-width: 768px) {
-            font-size: 18px;
-        }
+  p {
+    font-size: 36px;
+    color: #00bc77;
+    @media screen and (max-width: 768px) {
+      font-size: 18px;
     }
+  }
 
-    a {
-        font-size: 18px;
-        color: #ff6060;
-        @media screen and (max-width: 768px) {
-          font-size: 14px;
-        }
-      }
+  a {
+    font-size: 18px;
+    color: #ff6060;
+    @media screen and (max-width: 768px) {
+      font-size: 14px;
+    }
+  }
 }

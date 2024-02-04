@@ -1,9 +1,8 @@
 const Account = ({ title, amount, description }) => {
   return (
-  
-   <div>
-      <h2 className='sr-only'>Accounts</h2>
-      <section className='account'>
+    <div>
+      <h2 className="sr-only">Accounts</h2>
+      <section className="account">
         <div className="account-content-wrapper">
           <h3 className="account-title">{title}</h3>
           <p className="account-amount">{amount}</p>
@@ -14,7 +13,6 @@ const Account = ({ title, amount, description }) => {
         </div>
       </section>
     </div>
-    
   );
 };
 

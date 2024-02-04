@@ -1,5 +1,9 @@
 @import "./base/main.scss";
 @import "../components/Header/header";
 @import "../components/Feature/feature.scss";
+@import "../components/Account/account.scss";
+@import "../components/User/user.scss";
 @import "../components/Footer/footer.scss";
 @import "../pages/Home/home.scss";
+@import "../pages/Login/Login.scss";
+@import "../pages/Error/error.scss";
