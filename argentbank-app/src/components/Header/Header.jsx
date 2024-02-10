@@ -13,7 +13,6 @@ function Header() {
   const logoutHandler = () => {
     dispatch(logout());
     sessionStorage.clear();
-    localStorage.clear();
     navigate("/");
   };
 

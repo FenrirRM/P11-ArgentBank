@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { loginFailed, loginSuccess } from "../../redux/actions/auth.actions.js";
@@ -11,6 +11,18 @@ function Form() {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    const storedEmail = localStorage.getItem("email");
+    const storedPassword = localStorage.getItem("password");
+
+    if (storedEmail) {
+      setEmail(storedEmail);
+      setPassword(storedPassword);
+      setRememberMe(true);
+    }
+    
+  }, []);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -26,10 +38,16 @@ function Form() {
       if (response.ok) {
         const data = await response.json();
         const token = data.body.token;
-        dispatch(loginSuccess(token));
+        
         if (rememberMe) {
-          localStorage.setItem("token", token);
-        } else sessionStorage.setItem("token", token);
+          localStorage.setItem("email", email);
+          localStorage.setItem("password", password);
+        } else {
+          localStorage.removeItem("email");
+          localStorage.removeItem("password");
+        }
+        dispatch(loginSuccess(token));
+        sessionStorage.setItem("token", token);
         navigate("/Dashboard");
       } else {
         const error = "Incorrect email/password";
