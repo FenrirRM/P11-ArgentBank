@@ -5,6 +5,7 @@ import {
 } from "../actions/user.actions";
 
 /* state initiale de user */
+
 const initialState = {
   status: "VOID",
   userData: {},
@@ -28,7 +29,7 @@ export const userReducer = (state = initialState, action) => {
         },
       };
     case LOGOUT: {
-      localStorage.removeItem("token");
+      sessionStorage.removeItem("token");
       return initialState;
     }
     default:
