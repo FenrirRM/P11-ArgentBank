@@ -29,7 +29,6 @@ export const userReducer = (state = initialState, action) => {
         },
       };
     case LOGOUT: {
-      sessionStorage.removeItem("token");
       return initialState;
     }
     default:

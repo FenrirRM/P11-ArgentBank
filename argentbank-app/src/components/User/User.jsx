@@ -47,7 +47,7 @@ function User() {
       };
       userData();
     }
-  }, [dispatch, token, setDisplay ]);
+  }, [dispatch, token]);
 
   const handleSubmitUsername = async (event) => {
     event.preventDefault();
