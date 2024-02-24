@@ -1,19 +1,12 @@
 import { LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT } from "../actions/auth.actions";
 
 /* state initiale de l'authentication */
-const initialState = sessionStorage.getItem("token")
-  ? {
-      status: "SUCCEEDED",
-      isConnected: true,
-      token: sessionStorage.getItem("token"),
-      error: null,
-    }
-  : {
-      status: "VOID",
-      isConnected: false,
-      token: null,
-      error: null,
-    };
+const initialState = {
+  status: "VOID",
+  isConnected: false,
+  token: null,
+  error: null,
+};
 
 export const authReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -35,13 +28,7 @@ export const authReducer = (state = initialState, action) => {
       };
     }
     case LOGOUT: {
-      return {
-        ...state,
-        status: "VOID",
-      isConnected: false,
-      token: null,
-      error: null,
-      };
+      return initialState;
     }
     default:
       return state;
